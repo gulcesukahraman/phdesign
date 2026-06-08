@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PH Dizayn — Engineered Water Flow</title>
+  <meta name="description" content="Mimari mükemmeliyetle buluşan su yönetimi. Premium paslanmaz çelik drenaj sistemleri.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── Custom Cursor ─── -->
+  <div class="cursor"      id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ─── Progress Bar ─── -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <nav id="mainNav">
+    <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      PH <span>Dizayn</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#s2">Ürünler</a></li>
+      <li><a href="#s3">Teknoloji</a></li>
+      <li><a href="#s5">Koleksiyon</a></li>
+      <li><a href="#s7">Projeler</a></li>
+      <li><a href="#s8">İletişim</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('s8').scrollIntoView({behavior:'smooth'})">
+      Teklif Al
+    </button>
+  </nav>
+
+  <!-- ─── Scene Nav Dots ─── -->
+  <div class="scene-nav" id="sceneNav">
+    <div class="snav-dot active" data-target="s1" data-label="Giriş"></div>
+    <div class="snav-dot"        data-target="s2" data-label="Ürün"></div>
+    <div class="snav-dot"        data-target="s3" data-label="Teknoloji"></div>
+    <div class="snav-dot"        data-target="s4" data-label="Invisible"></div>
+    <div class="snav-dot"        data-target="s5" data-label="Koleksiyon"></div>
+    <div class="snav-dot"        data-target="s6" data-label="Mühendislik"></div>
+    <div class="snav-dot"        data-target="s7" data-label="Projeler"></div>
+    <div class="snav-dot"        data-target="s8" data-label="İletişim"></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 01 — HERO
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s1">
+
+    <!-- ▼▼▼ HERO BACKGROUND IMAGE
+         Kendi görselinizi eklemek için:
+         1. Görselinizi images/ klasörüne koyun
+         2. Aşağıdaki <img> etiketinin src="images/DOSYA_ADI.jpg" kısmını düzeltin
+         3. style="opacity:0" → style="opacity:1" yapın
+         Tavsiye: 1920×1080 veya daha büyük, karanlık/neutral bir banyo fotoğrafı
+    ──────────────────────────────────────────── -->
+    <div class="hero-bg-img">
+      <img
+        class="hero-img-slot"
+        src="images/hero-bathroom.jpg"
+        alt="PH Dizayn lüks banyo"
+        style="opacity:0"
+      >
+    </div>
+
+    <!-- Geometric tile pattern (kaybolur görseli ekleyince) -->
+    <div class="hero-pattern">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hpGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"   stop-color="#e8e4dd"/>
+            <stop offset="100%" stop-color="#f5f3f0"/>
+          </linearGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#hpGrad)"/>
+        <!-- Wall tile grid -->
+        <g stroke="#d8d2c8" stroke-width="0.8" opacity="0.7">
+          <line x1="0" y1="150" x2="1600" y2="150"/><line x1="0" y1="300" x2="1600" y2="300"/>
+          <line x1="0" y1="450" x2="1600" y2="450"/><line x1="0" y1="600" x2="1600" y2="600"/>
+          <line x1="0" y1="750" x2="1600" y2="750"/>
+          <line x1="200" y1="0" x2="200" y2="900"/><line x1="400" y1="0" x2="400" y2="900"/>
+          <line x1="600" y1="0" x2="600" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/>
+          <line x1="1000" y1="0" x2="1000" y2="900"/><line x1="1200" y1="0" x2="1200" y2="900"/>
+          <line x1="1400" y1="0" x2="1400" y2="900"/>
+        </g>
+        <!-- Subtle tile shading alternating -->
+        <g fill="#c8c0b4" opacity="0.06">
+          <rect x="0"    y="0"   width="200" height="150"/>
+          <rect x="400"  y="0"   width="200" height="150"/>
+          <rect x="800"  y="0"   width="200" height="150"/>
+          <rect x="1200" y="0"   width="200" height="150"/>
+          <rect x="200"  y="150" width="200" height="150"/>
+          <rect x="600"  y="150" width="200" height="150"/>
+          <rect x="1000" y="150" width="200" height="150"/>
+          <rect x="1400" y="150" width="200" height="150"/>
+          <rect x="0"    y="300" width="200" height="150"/>
+          <rect x="400"  y="300" width="200" height="150"/>
+          <rect x="800"  y="300" width="200" height="150"/>
+          <rect x="1200" y="300" width="200" height="150"/>
+        </g>
+        <!-- Drain channel -->
+        <rect x="500" y="860" width="600" height="18" rx="4" fill="#c8c4bc" opacity="0.5"/>
+        <g fill="#b8b4ac" opacity="0.55">
+          <rect x="512" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="522" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="532" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="542" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="552" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="562" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="572" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="582" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="592" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="602" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="612" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="622" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="632" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="642" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="652" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="662" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="672" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="682" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="692" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="702" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="712" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="722" y="863" width="3" height="12" rx="1.5"/>
+          <rect x="732" y="863" width="3" height="12" rx="1.5"/>
+        </g>
+        <!-- Ambient light circle -->
+        <circle cx="1200" cy="300" r="280" fill="#f0e8d8" opacity="0.18"/>
+      </svg>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="hero-content">
+      <p class="hero-tag">Precision Drainage Engineering</p>
+      <h1 class="hero-h1">
+        Engineered<br>
+        <em>Water Flow.</em>
+      </h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">
+        Mimari mükemmeliyetle buluşan su yönetimi.<br>
+        Dünyanın en talepkar mekanları için<br>
+        premium paslanmaz çelik drenaj sistemleri.
+      </p>
+      <div class="hero-cta-row">
+        <button class="btn-gold" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})">
+          Koleksiyonu Keşfet
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})">
+          Teknolojiyi İncele →
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero stats -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">1.8<span style="font-size:1.2rem">L/s</span></div>
+        <div class="hero-stat-label">Debi Kapasitesi</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100<span style="font-size:1.2rem">%</span></div>
+        <div class="hero-stat-label">Su Sızdırmazlık</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">304</div>
+        <div class="hero-stat-label">Çelik Kalitesi</div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue">
+      <div class="scroll-line"></div>
+      <span class="scroll-txt">Keşfet</span>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 02 — PRODUCT REVEAL
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s2" style="padding:8rem 0">
+    <div class="inner">
+      <div class="s2-grid">
+
+        <!-- Product visual -->
+        <div class="product-vis reveal-left d1">
+          <div class="product-float">
+
+            <!-- ▼▼▼ PRODUCT IMAGE SLOT
+                 Ürün fotoğrafını eklemek için:
+                 src="images/product-premium-hero.png" yapın
+                 ve style="opacity:0" → "opacity:1" yapın
+            ──────────────────────────────────────────── -->
+            <!-- <img src="images/product-premium-hero.png" alt="Premium Duş Kanalı"
+                 style="opacity:0; max-width:400px; position:absolute; z-index:2"> -->
+
+            <!-- SVG fallback / wireframe (fotoğraf ekleyince kaldırabilirsiniz) -->
+            <svg width="420" height="460" viewBox="0 0 420 460" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sg_top" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"   stop-color="#e8edf2"/>
+                  <stop offset="40%"  stop-color="#9aa4ae"/>
+                  <stop offset="70%"  stop-color="#c8d0d8"/>
+                  <stop offset="100%" stop-color="#6a7480"/>
+                </linearGradient>
+                <linearGradient id="sg_face" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%"   stop-color="#7a8490"/>
+                  <stop offset="45%"  stop-color="#d8e0e8"/>
+                  <stop offset="100%" stop-color="#7a8490"/>
+                </linearGradient>
+                <linearGradient id="sg_side" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"   stop-color="#b8c0c8"/>
+                  <stop offset="100%" stop-color="#606870"/>
+                </linearGradient>
+                <radialGradient id="prod_glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="#c4a060" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="transparent"/>
+                </radialGradient>
+                <filter id="pDrop">
+                  <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="rgba(0,0,0,0.12)"/>
+                </filter>
+              </defs>
+
+              <!-- Ambient glow -->
+              <ellipse cx="210" cy="230" rx="180" ry="60" fill="url(#prod_glow)"/>
+              <!-- Ground shadow -->
+              <ellipse cx="210" cy="428" rx="130" ry="14" fill="rgba(0,0,0,0.07)"/>
+
+              <g filter="url(#pDrop)" class="prod-svg-steel">
+                <!-- Top flange -->
+                <rect x="38" y="145" width="344" height="13" rx="3.5" fill="url(#sg_top)"/>
+                <!-- Gold seal -->
+                <rect x="36" y="157" width="348" height="3" rx="1.5" fill="#9a7a3a" opacity="0.65"/>
+                <!-- Body -->
+                <rect x="42" y="160" width="336" height="54" rx="4" fill="url(#sg_top)"/>
+                <!-- Inner cavity -->
+                <rect x="52" y="165" width="316" height="44" rx="2.5" fill="#d8dce0"/>
+                <!-- Grate -->
+                <rect x="54" y="167" width="312" height="40" rx="2" fill="url(#sg_face)" opacity="0.9"/>
+                <!-- Slots -->
+                <g fill="#c0c8d0" opacity="0.8">
+                  <rect x="61"  y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="71"  y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="81"  y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="91"  y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="101" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="111" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="121" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="131" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="141" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="151" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="161" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="171" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="181" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="191" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="201" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="211" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="221" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="231" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="241" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="251" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="261" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="271" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="281" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="291" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="301" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="311" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="321" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="331" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="341" y="170" width="3.5" height="34" rx="1.75"/>
+                  <rect x="351" y="170" width="3.5" height="34" rx="1.75"/>
+                </g>
+                <!-- Bottom seal + flange -->
+                <rect x="36" y="213" width="348" height="3"  rx="1.5" fill="#9a7a3a" opacity="0.48"/>
+                <rect x="38" y="215" width="344" height="11" rx="3" fill="url(#sg_side)" opacity="0.85"/>
+                <!-- Side legs -->
+                <rect x="42" y="225" width="20" height="108" rx="3" fill="url(#sg_side)" opacity="0.8"/>
+                <rect x="358" y="225" width="20" height="108" rx="3" fill="url(#sg_side)" opacity="0.8"/>
+                <!-- Drain body -->
+                <rect x="146" y="225" width="128" height="124" rx="4" fill="#e0e4e8"/>
+                <rect x="148" y="227" width="124" height="120" rx="3" fill="url(#sg_side)" opacity="0.25"/>
+                <!-- Drain outlet -->
+                <circle cx="210" cy="302" r="34" fill="#d0d4d8"/>
+                <circle cx="210" cy="302" r="29" fill="none" stroke="#b0b8c0" stroke-width="2" opacity="0.7"/>
+                <circle cx="210" cy="302" r="20" fill="none" stroke="#9aa0a8" stroke-width="1.2" opacity="0.55"/>
+              </g>
+
+              <!-- Callout labels -->
+              <line x1="366" y1="162" x2="396" y2="132" stroke="#9a7a3a" stroke-width="0.9" opacity="0.7"/>
+              <circle cx="396" cy="132" r="2" fill="#9a7a3a" opacity="0.7"/>
+              <text x="400" y="129" font-family="Montserrat,sans-serif" font-size="9" fill="#9a7a3a" font-weight="500">Paslanmaz ızgara</text>
+
+              <line x1="366" y1="216" x2="396" y2="244" stroke="#8a8890" stroke-width="0.9" opacity="0.6"/>
+              <circle cx="396" cy="244" r="2" fill="#8a8890" opacity="0.6"/>
+              <text x="400" y="248" font-family="Montserrat,sans-serif" font-size="9" fill="#8a8890" font-weight="400">Su yalıtım flanşı</text>
+
+              <line x1="146" y1="302" x2="24"  y2="325" stroke="#8a8890" stroke-width="0.9" opacity="0.6"/>
+              <circle cx="24" cy="325" r="2" fill="#8a8890" opacity="0.6"/>
+              <text x="6"   y="320" font-family="Montserrat,sans-serif" font-size="9" fill="#8a8890" font-weight="400">Drenaj çıkışı</text>
+
+              <line x1="42"  y1="180" x2="12"  y2="160" stroke="#9a7a3a" stroke-width="0.9" opacity="0.7"/>
+              <circle cx="12" cy="160" r="2" fill="#9a7a3a" opacity="0.7"/>
+              <text x="15"  y="154" font-family="Montserrat,sans-serif" font-size="9" fill="#9a7a3a" font-weight="500">Altın seal</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="reveal-right d2">
+          <p class="section-eyebrow">02 — Ürün Anatomisi</p>
+          <div class="section-rule"></div>
+          <h2 class="section-title">Hassasiyetin<br>Anatomisi</h2>
+          <p class="section-body">
+            Her PH Dizayn duş kanalı, tek parça 304-grade paslanmaz
+            çelik profilden üretilir. Sıfır tolerans. Sıfır uzlaşma.
+          </p>
+          <div class="spec-list">
+            <div class="spec-item"><div class="spec-dot"></div>304-grade paslanmaz çelik gövde</div>
+            <div class="spec-item"><div class="spec-dot"></div>Patentli contasız su yalıtım sistemi</div>
+            <div class="spec-item"><div class="spec-dot"></div>İkincil su drenajı overflow sistemi</div>
+            <div class="spec-item"><div class="spec-dot"></div>Ayarlanabilir seviyeleme ayakları ±8mm</div>
+            <div class="spec-item"><div class="spec-dot"></div>Saç tutucu sepet — aletssiz çıkarma</div>
+            <div class="spec-item"><div class="spec-dot"></div>EN 1253 drenaj sertifikası</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 03 — WATERPROOF TECHNOLOGY
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s3" style="padding:8rem 0">
+    <div class="inner">
+
+      <div class="s3-header reveal">
+        <p class="section-eyebrow">03 — Teknoloji</p>
+        <h2 class="section-title">%100 Su Sızdırmaz.<br><em>Sıfır Uzlaşma.</em></h2>
+        <div class="section-rule"></div>
+        <p class="section-body" style="max-width:58ch;margin:0 auto">
+          Patentli contasız teknoloji başarısızlık noktalarını ortadan kaldırır.
+          Monolitik çelik flanşımız, su yalıtım membranıyla kalıcı olarak birleşir.
+        </p>
+      </div>
+
+      <div class="tech-grid">
+
+        <div class="tech-card reveal d1">
+          <span class="tc-icon">◈</span>
+          <div class="tc-title">Contasız Sistem</div>
+          <p class="tc-text">
+            Kauçuk conta veya keçe yok. Paslanmaz flanş doğrudan membranla entegre
+            olarak binanın ömrü boyunca süren kalıcı, güvenilir bir bağlantı oluşturur.
+          </p>
+          <div class="tc-stat">100<span class="tc-stat-unit">%</span></div>
+          <div class="tc-stat-label">Su Sızdırmazlık Garantisi</div>
+        </div>
+
+        <div class="tech-card reveal d2">
+          <span class="tc-icon">⟁</span>
+          <div class="tc-title">İkincil Drenaj</div>
+          <p class="tc-text">
+            Çift drenaj mimarisi hem yüzey suyunu hem de membran yoğuşmasını toplar.
+            Birincil sistem dolsa bile ikincil kanal suyu sessizce tahliye eder.
+          </p>
+          <div class="tc-stat">2<span class="tc-stat-unit">×</span></div>
+          <div class="tc-stat-label">Drenaj Kapasitesi</div>
+        </div>
+
+        <div class="tech-card reveal d3">
+          <span class="tc-icon">⬡</span>
+          <div class="tc-title">Akış Mühendisliği</div>
+          <p class="tc-text">
+            Hidrodinamik iç geometri suyu laminer akışa yönlendirerek drenajı hızlandırır.
+            1.8L/sn debi kapasitesiyle test edilmiş — tüm Avrupa normlarını aşar.
+          </p>
+          <div class="tc-stat">1.8<span class="tc-stat-unit">L/s</span></div>
+          <div class="tc-stat-label">Debi Kapasitesi</div>
+        </div>
+
+      </div>
+
+      <!-- Animated water flow SVG -->
+      <div class="waterflow-wrap reveal d4">
+        <svg width="100%" height="80" viewBox="0 0 1200 80"
+             preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="transparent"/>
+              <stop offset="15%"  stop-color="#4a90d9" stop-opacity="0.45"/>
+              <stop offset="85%"  stop-color="#4a90d9" stop-opacity="0.45"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,40 Q300,18 600,40 Q900,62 1200,40"
+                fill="none" stroke="url(#wg)" stroke-width="2.5"
+                stroke-dasharray="600" stroke-dashoffset="600">
+            <animate attributeName="stroke-dashoffset" from="600" to="-600" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <path d="M0,50 Q300,68 600,50 Q900,32 1200,50"
+                fill="none" stroke="url(#wg)" stroke-width="2"
+                stroke-dasharray="540" stroke-dashoffset="540">
+            <animate attributeName="stroke-dashoffset" from="540" to="-540" dur="2.6s" begin="0.4s" repeatCount="indefinite"/>
+          </path>
+          <!-- Channel base -->
+          <rect x="0" y="64" width="1200" height="14" rx="3" fill="#e8e4dd"/>
+          <rect x="0" y="65" width="1200" height="12" rx="2.5" fill="#c8c0b4" opacity="0.4"/>
+          <g stroke="#d0c8c0" stroke-width="1" opacity="0.7">
+            <line x1="60"  y1="66" x2="60"  y2="76"/>
+            <line x1="120" y1="66" x2="120" y2="76"/>
+            <line x1="180" y1="66" x2="180" y2="76"/>
+            <line x1="240" y1="66" x2="240" y2="76"/>
+            <line x1="300" y1="66" x2="300" y2="76"/>
+            <line x1="360" y1="66" x2="360" y2="76"/>
+            <line x1="420" y1="66" x2="420" y2="76"/>
+            <line x1="480" y1="66" x2="480" y2="76"/>
+            <line x1="540" y1="66" x2="540" y2="76"/>
+            <line x1="600" y1="66" x2="600" y2="76"/>
+            <line x1="660" y1="66" x2="660" y2="76"/>
+            <line x1="720" y1="66" x2="720" y2="76"/>
+            <line x1="780" y1="66" x2="780" y2="76"/>
+            <line x1="840" y1="66" x2="840" y2="76"/>
+            <line x1="900" y1="66" x2="900" y2="76"/>
+            <line x1="960" y1="66" x2="960" y2="76"/>
+            <line x1="1020" y1="66" x2="1020" y2="76"/>
+            <line x1="1080" y1="66" x2="1080" y2="76"/>
+            <line x1="1140" y1="66" x2="1140" y2="76"/>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 04 — INVISIBLE SYSTEM
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s4" style="padding:8rem 0">
+    <div class="inner">
+      <div class="s4-grid">
+
+        <!-- Visual demo -->
+        <div class="invisible-demo reveal-left d1" style="height:420px">
+
+          <!-- ▼▼▼ INVISIBLE SYSTEM IMAGE SLOT
+               Görsel eklemek için:
+               src="images/invisible-floor.jpg" yapın
+               style="opacity:0" → "opacity:1"
+          ──────────────────────────────────────────── -->
+          <img class="demo-img-slot"
+               src="images/invisible-floor.jpg"
+               alt="Invisible drenaj sistemi"
+               style="opacity:0">
+
+          <!-- SVG fallback -->
+          <svg width="100%" height="100%" viewBox="0 0 560 420"
+               xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#f0ece6"/>
+                <stop offset="100%" stop-color="#e4dfd8"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="30" width="560" height="380" fill="url(#tg)" rx="2"/>
+            <!-- Tile grid -->
+            <g stroke="#d8d0c4" stroke-width="1.2" opacity="0.8">
+              <line x1="0"   y1="170" x2="560" y2="170"/>
+              <line x1="0"   y1="310" x2="560" y2="310"/>
+              <line x1="140" y1="30"  x2="140" y2="410"/>
+              <line x1="280" y1="30"  x2="280" y2="410"/>
+              <line x1="420" y1="30"  x2="420" y2="410"/>
+            </g>
+            <!-- Subtle tile tones -->
+            <g fill="#c8c0b4" opacity="0.06">
+              <rect x="0"   y="30"  width="140" height="140"/>
+              <rect x="280" y="30"  width="140" height="140"/>
+              <rect x="140" y="170" width="140" height="140"/>
+              <rect x="420" y="170" width="140" height="140"/>
+              <rect x="0"   y="310" width="140" height="100"/>
+              <rect x="280" y="310" width="140" height="100"/>
+            </g>
+            <!-- Invisible drain — perfectly flush -->
+            <g opacity="0.9">
+              <rect x="190" y="164" width="180" height="14" rx="1.5" fill="url(#tg)"/>
+              <rect x="190" y="164" width="180" height="14" rx="1.5" fill="none" stroke="#d0c8bc" stroke-width="1.2"/>
+              <!-- Near-invisible slot lines matching grout color -->
+              <g stroke="#c8c0b4" stroke-width="0.85" opacity="0.8">
+                <line x1="200" y1="166" x2="200" y2="176"/>
+                <line x1="210" y1="166" x2="210" y2="176"/>
+                <line x1="220" y1="166" x2="220" y2="176"/>
+                <line x1="230" y1="166" x2="230" y2="176"/>
+                <line x1="240" y1="166" x2="240" y2="176"/>
+                <line x1="250" y1="166" x2="250" y2="176"/>
+                <line x1="260" y1="166" x2="260" y2="176"/>
+                <line x1="270" y1="166" x2="270" y2="176"/>
+                <line x1="280" y1="166" x2="280" y2="176"/>
+                <line x1="290" y1="166" x2="290" y2="176"/>
+                <line x1="300" y1="166" x2="300" y2="176"/>
+                <line x1="310" y1="166" x2="310" y2="176"/>
+                <line x1="320" y1="166" x2="320" y2="176"/>
+                <line x1="330" y1="166" x2="330" y2="176"/>
+                <line x1="340" y1="166" x2="340" y2="176"/>
+                <line x1="350" y1="166" x2="350" y2="176"/>
+                <line x1="360" y1="166" x2="360" y2="176"/>
+              </g>
+            </g>
+            <!-- Animated water flowing to invisible drain -->
+            <circle r="3.5" fill="#7aaed8" opacity="0">
+              <animateMotion dur="2.5s" repeatCount="indefinite"
+                path="M80,100 Q140,140 193,171"/>
+              <animate attributeName="opacity" values="0;0.55;0"
+                dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="2.8" fill="#7aaed8" opacity="0">
+              <animateMotion dur="3s" begin="0.7s" repeatCount="indefinite"
+                path="M460,210 Q380,185 369,171"/>
+              <animate attributeName="opacity" values="0;0.5;0"
+                dur="3s" begin="0.7s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="3" fill="#8ab8e0" opacity="0">
+              <animateMotion dur="2.9s" begin="1.4s" repeatCount="indefinite"
+                path="M280,370 Q276,270 280,174"/>
+              <animate attributeName="opacity" values="0;0.45;0"
+                dur="2.9s" begin="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Label -->
+            <text x="280" y="16"
+                  font-family="Montserrat,sans-serif" font-size="10"
+                  fill="#9a7a3a" text-anchor="middle" font-weight="600"
+                  letter-spacing="0.2em">INVISIBLE SYSTEM</text>
+          </svg>
+
+        </div>
+
+        <!-- Text -->
+        <div class="reveal-right d2">
+          <p class="section-eyebrow">04 — Görünmez Tasarım</p>
+          <div class="section-rule"></div>
+          <h2 class="section-title">Saf Zemin.<br>Kanal Yok.</h2>
+          <p class="section-body">
+            ProDrain Invisible sistemi kendi kaplanızı — karo, taş veya herhangi
+            bir malzemeyi — kapak olarak kabul eder. Kanal zemine tamamen kaybolur.
+            Su onu yine de bulur.
+          </p>
+          <div class="spec-list" style="margin-top:2rem">
+            <div class="spec-item"><div class="spec-dot"></div>Özel karo inlay — her malzeme uyumlu</div>
+            <div class="spec-item"><div class="spec-dot"></div>±0.5mm hassasiyetle flush montaj</div>
+            <div class="spec-item"><div class="spec-dot"></div>Zemin desenine sıfır görsel müdahale</div>
+            <div class="spec-item"><div class="spec-dot"></div>Tam debi kapasitesi korunur</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 05 — COLLECTION
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s5" style="padding:8rem 0;align-items:flex-start">
+    <div class="inner">
+
+      <div class="s5-header reveal">
+        <div>
+          <p class="section-eyebrow">05 — Ürün Serisi</p>
+          <h2 class="section-title" style="margin-bottom:0">Koleksiyon</h2>
+        </div>
+        <p class="s5-header-right">
+          Dört seri. Sonsuz konfigürasyon.<br>
+          Her mimari vizyon için mühendislik.
+        </p>
+      </div>
+
+      <div class="collection-grid">
+
+        <!-- ── PREMIUM ── -->
+        <div class="prod-card reveal d1">
+          <div class="prod-img-wrap">
+            <!-- ▼▼▼ ÜRÜN FOTOĞRAFI — PREMIUM
+                 src="images/product-premium.jpg" ve opacity:1 yapın -->
+            <img class="prod-photo"
+                 src="images/product-premium.jpg"
+                 alt="Premium duş kanalı"
+                 style="opacity:0">
+            <!-- SVG fallback -->
+            <svg width="180" height="160" viewBox="0 0 180 160" class="prod-svg-steel" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="p1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8edf2"/><stop offset="50%" stop-color="#9aa4ae"/><stop offset="100%" stop-color="#c8d0d8"/></linearGradient></defs>
+              <rect x="18" y="62" width="144" height="26" rx="3" fill="url(#p1g)"/>
+              <rect x="20" y="64" width="140" height="22" rx="2.5" fill="#d0d8e0"/>
+              <rect x="21" y="65" width="138" height="20" rx="2" fill="#9aa4ae" opacity="0.6"/>
+              <g fill="#c0c8d0" opacity="0.75">
+                <rect x="27" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="35" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="43" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="51" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="59" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="67" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="75" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="83" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="91" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="99" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="107" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="115" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="123" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="131" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="139" y="67" width="3" height="16" rx="1.5"/>
+                <rect x="147" y="67" width="3" height="16" rx="1.5"/>
+              </g>
+              <rect x="16" y="57" width="148" height="7" rx="2" fill="url(#p1g)"/>
+              <rect x="16" y="57" width="148" height="2.5" rx="1.25" fill="#9a7a3a" opacity="0.6"/>
+              <rect x="16" y="87" width="148" height="6" rx="2" fill="#8a9099" opacity="0.65"/>
+            </svg>
+          </div>
+          <div class="prod-info">
+            <p class="prod-series">Seri</p>
+            <p class="prod-name">Premium</p>
+            <p class="prod-desc">Mimariye özgü profil, tasarımcı tarafından belirlenen yüzey seçenekleriyle.</p>
+            <div class="finish-dots">
+              <div class="fdot steel" data-finish="steel" title="Paslanmaz Çelik"></div>
+              <div class="fdot black" data-finish="black" title="Mat Siyah"></div>
+              <div class="fdot gold"  data-finish="gold"  title="Altın"></div>
+            </div>
+            <div class="prod-link">Detayları Gör →</div>
+          </div>
+        </div>
+
+        <!-- ── SLIM ── -->
+        <div class="prod-card reveal d2">
+          <div class="prod-img-wrap">
+            <!-- ▼▼▼ ÜRÜN FOTOĞRAFI — SLIM
+                 src="images/product-slim.jpg" ve opacity:1 yapın -->
+            <img class="prod-photo"
+                 src="images/product-slim.jpg"
+                 alt="Slim duş kanalı"
+                 style="opacity:0">
+            <svg width="180" height="160" viewBox="0 0 180 160" class="prod-svg-steel" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="p2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8edf2"/><stop offset="50%" stop-color="#9aa4ae"/><stop offset="100%" stop-color="#c8d0d8"/></linearGradient></defs>
+              <rect x="18" y="72" width="144" height="16" rx="2" fill="url(#p2g)"/>
+              <rect x="20" y="73.5" width="140" height="13" rx="1.5" fill="#d0d8e0"/>
+              <rect x="21" y="74.5" width="138" height="11" rx="1.5" fill="#9aa4ae" opacity="0.5"/>
+              <g fill="#c0c8d0" opacity="0.7">
+                <rect x="27" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="35" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="43" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="51" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="59" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="67" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="75" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="83" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="91" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="99" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="107" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="115" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="123" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="131" y="76" width="2.5" height="8" rx="1.25"/>
+                <rect x="139" y="76" width="2.5" height="8" rx="1.25"/>
+              </g>
+              <rect x="16" y="67" width="148" height="7" rx="2" fill="url(#p2g)"/>
+              <rect x="16" y="88" width="148" height="5" rx="1.5" fill="#8a9099" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="prod-info">
+            <p class="prod-series">Seri</p>
+            <p class="prod-name">Slim</p>
+            <p class="prod-desc">Ultra ince profil, sığ döşeme konstrüksiyonlarına uyar. Kesilebilir çerçeve.</p>
+            <div class="finish-dots">
+              <div class="fdot steel" data-finish="steel"></div>
+              <div class="fdot black" data-finish="black"></div>
+            </div>
+            <div class="prod-link">Detayları Gör →</div>
+          </div>
+        </div>
+
+        <!-- ── FLOOR DRAIN ── -->
+        <div class="prod-card reveal d3">
+          <div class="prod-img-wrap">
+            <!-- ▼▼▼ ÜRÜN FOTOĞRAFI — YER SÜZGECİ
+                 src="images/product-floor-drain.jpg" ve opacity:1 yapın -->
+            <img class="prod-photo"
+                 src="images/product-floor-drain.jpg"
+                 alt="Yer süzgeci"
+                 style="opacity:0">
+            <svg width="180" height="160" viewBox="0 0 180 160" class="prod-svg-steel" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="p3g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8edf2"/><stop offset="50%" stop-color="#9aa4ae"/><stop offset="100%" stop-color="#c8d0d8"/></linearGradient></defs>
+              <rect x="55" y="35" width="70" height="70" rx="4.5" fill="url(#p3g)"/>
+              <rect x="57" y="37" width="66" height="66" rx="4" fill="#d0d8e0"/>
+              <rect x="58" y="38" width="64" height="64" rx="3.5" fill="#9aa4ae" opacity="0.35"/>
+              <rect x="64" y="44" width="52" height="52" rx="2.5" fill="none" stroke="#c8d0d8" stroke-width="1" opacity="0.55"/>
+              <rect x="72" y="52" width="36" height="36" rx="2" fill="none" stroke="#c8d0d8" stroke-width="0.7" opacity="0.4"/>
+              <circle cx="90" cy="70" r="11" fill="#e0e4e8"/>
+              <circle cx="90" cy="70" r="8" fill="none" stroke="#b0b8c0" stroke-width="1.5" opacity="0.65"/>
+              <circle cx="90" cy="70" r="4" fill="none" stroke="#9aa0a8" stroke-width="1" opacity="0.5"/>
+              <g stroke="#b8c0c8" stroke-width="0.8" opacity="0.5">
+                <line x1="90" y1="51" x2="90" y2="56"/>
+                <line x1="90" y1="84" x2="90" y2="89"/>
+                <line x1="71" y1="70" x2="76" y2="70"/>
+                <line x1="104" y1="70" x2="109" y2="70"/>
+              </g>
+              <rect x="53" y="33" width="74" height="4" rx="2" fill="#9a7a3a" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="prod-info">
+            <p class="prod-series">Seri</p>
+            <p class="prod-name">Yer Süzgeci</p>
+            <p class="prod-desc">Banyo merkezleri için nokta drenajı. Kare, yuvarlak ve karo-inlay varyantlarında.</p>
+            <div class="finish-dots">
+              <div class="fdot steel" data-finish="steel"></div>
+              <div class="fdot black" data-finish="black"></div>
+              <div class="fdot gold"  data-finish="gold"></div>
+            </div>
+            <div class="prod-link">Detayları Gör →</div>
+          </div>
+        </div>
+
+        <!-- ── BALKON ── -->
+        <div class="prod-card reveal d4">
+          <div class="prod-img-wrap">
+            <!-- ▼▼▼ ÜRÜN FOTOĞRAFI — BALKON
+                 src="images/product-balcony.jpg" ve opacity:1 yapın -->
+            <img class="prod-photo"
+                 src="images/product-balcony.jpg"
+                 alt="Balkon drenajı"
+                 style="opacity:0">
+            <svg width="180" height="160" viewBox="0 0 180 160" class="prod-svg-steel" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="p4g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dce2e8"/><stop offset="50%" stop-color="#8a9099"/><stop offset="100%" stop-color="#b8c0c8"/></linearGradient></defs>
+              <rect x="14" y="72" width="152" height="22" rx="3" fill="url(#p4g)"/>
+              <rect x="16" y="74" width="148" height="18" rx="2.5" fill="#d0d8e0"/>
+              <rect x="17" y="75" width="146" height="16" rx="2" fill="#8a9099" opacity="0.42"/>
+              <g fill="#c0c8d0" opacity="0.65">
+                <rect x="23" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="31" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="39" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="47" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="55" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="63" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="71" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="79" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="87" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="95" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="103" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="111" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="119" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="127" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="135" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="143" y="77" width="3" height="12" rx="1.5"/>
+                <rect x="151" y="77" width="3" height="12" rx="1.5"/>
+              </g>
+              <rect x="10" y="58" width="7"   height="40" rx="2.5" fill="url(#p4g)" opacity="0.9"/>
+              <rect x="163" y="58" width="7"  height="40" rx="2.5" fill="url(#p4g)" opacity="0.9"/>
+              <rect x="10" y="68" width="160" height="2.5" rx="1.25" fill="#9a7a3a" opacity="0.48"/>
+            </svg>
+          </div>
+          <div class="prod-info">
+            <p class="prod-series">Seri</p>
+            <p class="prod-name">Balkon &amp; Teras</p>
+            <p class="prod-desc">Dış mekan sınıfı drenaj, UV dayanımlı conta ve genişletilmiş yan flanşlarla.</p>
+            <div class="finish-dots">
+              <div class="fdot steel" data-finish="steel"></div>
+              <div class="fdot black" data-finish="black"></div>
+            </div>
+            <div class="prod-link">Detayları Gör →</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 06 — ENGINEERING
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s6" style="padding:8rem 0">
+    <div class="inner">
+      <div class="s6-grid">
+
+        <div class="metrics-grid reveal-left d1">
+          <div class="metric-cell">
+            <div class="metric-num">1.8<span class="metric-unit">L/s</span></div>
+            <div class="metric-label">Debi Kapasitesi</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-num">100<span class="metric-unit">%</span></div>
+            <div class="metric-label">Su Sızdırmazlık</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-num">304</div>
+            <div class="metric-label">Çelik Kalitesi</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-num">±0.5<span class="metric-unit" style="font-size:1rem">mm</span></div>
+            <div class="metric-label">Montaj Toleransı</div>
+          </div>
+        </div>
+
+        <div class="reveal-right d2">
+          <p class="section-eyebrow">06 — Mühendislik</p>
+          <div class="section-rule"></div>
+          <h2 class="section-title">Tasarımla<br>Gelen Hassasiyet.</h2>
+          <p class="section-body">
+            Her ölçü hidrolik modellemeden elde edilir. Her tolerans bir işlev görür.
+            Bu, göründüğü kadar iyi performans gösteren mühendisliktir.
+          </p>
+          <div class="cert-list">
+            <div class="cert-item"><span class="cert-check">✓</span> EN 1253 Drenaj Sertifikası</div>
+            <div class="cert-item"><span class="cert-check">✓</span> DIN 18534 Su Yalıtımı Uyumu</div>
+            <div class="cert-item"><span class="cert-check">✓</span> CE İşareti — Avrupa Standardı</div>
+            <div class="cert-item"><span class="cert-check">✓</span> ISO 9001 Kalite Yönetim Sistemi</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 07 — PROJECTS
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s7">
+    <div class="projects-wrap">
+
+      <!-- ── OTEL ── -->
+      <div class="proj-cell">
+        <div class="proj-bg-layer">
+          <!-- ▼▼▼ PROJE FOTOĞRAFI — OTEL
+               <img> etiketini açın, src="images/project-hotel.jpg" yapın
+               opacity:0 → opacity:.7
+          ──────────────────────────────────────────── -->
+          <!-- <img src="images/project-hotel.jpg" class="proj-photo" alt="Lüks Otel" style="opacity:.7"> -->
+
+          <!-- Pattern fallback -->
+          <div class="proj-pattern">
+            <svg width="100%" height="100%" viewBox="0 0 400 900"
+                 preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="900" fill="#e8e2da"/>
+              <g stroke="#d8d0c4" stroke-width="1" opacity="0.6">
+                <line x1="0" y1="225" x2="400" y2="225"/>
+                <line x1="0" y1="450" x2="400" y2="450"/>
+                <line x1="0" y1="675" x2="400" y2="675"/>
+                <line x1="100" y1="0" x2="100" y2="900"/>
+                <line x1="200" y1="0" x2="200" y2="900"/>
+                <line x1="300" y1="0" x2="300" y2="900"/>
+              </g>
+              <circle cx="200" cy="200" r="120" fill="#c8a060" opacity="0.07"/>
+              <rect x="60" y="380" width="280" height="160" rx="4" fill="#e0d8d0" stroke="#d0c8c0" stroke-width="1"/>
+              <rect x="80" y="392" width="240" height="20" rx="3" fill="#c8c0b8" opacity="0.5"/>
+              <rect x="50" y="580" width="300" height="10" rx="3" fill="#c8c0b8" opacity="0.6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="proj-overlay">
+          <p class="proj-type">Konaklama</p>
+          <p class="proj-name">Lüks Otel</p>
+          <p class="proj-loc">İstanbul</p>
+          <p class="proj-arrow">Projeyi İncele →</p>
+        </div>
+      </div>
+
+      <!-- ── SPA ── -->
+      <div class="proj-cell">
+        <div class="proj-bg-layer">
+          <!-- <img src="images/project-spa.jpg" class="proj-photo" alt="Spa & Termal" style="opacity:.7"> -->
+          <div class="proj-pattern">
+            <svg width="100%" height="100%" viewBox="0 0 400 900"
+                 preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="900" fill="#dfe8e8"/>
+              <g stroke="#ccd8d8" stroke-width="1" opacity="0.6">
+                <line x1="0" y1="225" x2="400" y2="225"/>
+                <line x1="0" y1="450" x2="400" y2="450"/>
+                <line x1="0" y1="675" x2="400" y2="675"/>
+                <line x1="100" y1="0" x2="100" y2="900"/>
+                <line x1="200" y1="0" x2="200" y2="900"/>
+                <line x1="300" y1="0" x2="300" y2="900"/>
+              </g>
+              <ellipse cx="200" cy="280" rx="160" ry="100" fill="#5090a0" opacity="0.08"/>
+              <path d="M0,430 Q100,420 200,430 Q300,440 400,430"
+                    fill="none" stroke="#7ab8c8" stroke-width="2.5" opacity="0.45"/>
+              <rect x="30" y="400" width="340" height="12" rx="4" fill="#9ab8c0" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="proj-overlay">
+          <p class="proj-type">Wellness</p>
+          <p class="proj-name">Spa &amp; Termal</p>
+          <p class="proj-loc">Bodrum</p>
+          <p class="proj-arrow">Projeyi İncele →</p>
+        </div>
+      </div>
+
+      <!-- ── VİLLA ── -->
+      <div class="proj-cell">
+        <div class="proj-bg-layer">
+          <!-- <img src="images/project-villa.jpg" class="proj-photo" alt="Lüks Villa" style="opacity:.7"> -->
+          <div class="proj-pattern">
+            <svg width="100%" height="100%" viewBox="0 0 400 900"
+                 preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="900" fill="#e4e8df"/>
+              <g stroke="#d4d8cf" stroke-width="1" opacity="0.6">
+                <line x1="0" y1="225" x2="400" y2="225"/>
+                <line x1="0" y1="450" x2="400" y2="450"/>
+                <line x1="0" y1="675" x2="400" y2="675"/>
+                <line x1="100" y1="0" x2="100" y2="900"/>
+                <line x1="200" y1="0" x2="200" y2="900"/>
+                <line x1="300" y1="0" x2="300" y2="900"/>
+              </g>
+              <ellipse cx="300" cy="180" rx="120" ry="90" fill="#487048" opacity="0.08"/>
+              <rect x="188" y="180" width="4" height="300" fill="#a0b890" opacity="0.55"/>
+              <rect x="80" y="480" width="240" height="8" rx="3" fill="#9ab898" opacity="0.55"/>
+            </svg>
+          </div>
+        </div>
+        <div class="proj-overlay">
+          <p class="proj-type">Rezidans</p>
+          <p class="proj-name">Lüks Villa</p>
+          <p class="proj-loc">Çeşme</p>
+          <p class="proj-arrow">Projeyi İncele →</p>
+        </div>
+      </div>
+
+      <!-- ── DAİRE ── -->
+      <div class="proj-cell">
+        <div class="proj-bg-layer">
+          <!-- <img src="images/project-apartment.jpg" class="proj-photo" alt="Modern Daire" style="opacity:.7"> -->
+          <div class="proj-pattern">
+            <svg width="100%" height="100%" viewBox="0 0 400 900"
+                 preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="900" fill="#e8e4ee"/>
+              <g stroke="#d8d4e4" stroke-width="1" opacity="0.6">
+                <line x1="0" y1="225" x2="400" y2="225"/>
+                <line x1="0" y1="450" x2="400" y2="450"/>
+                <line x1="0" y1="675" x2="400" y2="675"/>
+                <line x1="100" y1="0" x2="100" y2="900"/>
+                <line x1="200" y1="0" x2="200" y2="900"/>
+                <line x1="300" y1="0" x2="300" y2="900"/>
+              </g>
+              <ellipse cx="120" cy="280" rx="90" ry="120" fill="#604880" opacity="0.07"/>
+              <rect x="140" y="450" width="120" height="120" rx="4" fill="#e0d8e8" stroke="#d0c8d8" stroke-width="1"/>
+              <circle cx="200" cy="510" r="22" fill="#d8d0e0"/>
+              <circle cx="200" cy="510" r="16" fill="none" stroke="#b0a8b8" stroke-width="1.5" opacity="0.6"/>
+              <rect x="80" y="598" width="240" height="8" rx="3" fill="#b0a8b8" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="proj-overlay">
+          <p class="proj-type">Kentsel</p>
+          <p class="proj-name">Modern Daire</p>
+          <p class="proj-loc">Ankara</p>
+          <p class="proj-arrow">Projeyi İncele →</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCENE 08 — FINAL CTA
+  ══════════════════════════════════════════════ -->
+  <section class="scene" id="s8" style="padding:8rem 0">
+    <div class="s8-content">
+      <p class="final-eyebrow reveal">PH Dizayn — Kur. 2008 — İstanbul</p>
+      <h2 class="final-title reveal d1">
+        Drenajın<br><strong>Ötesinde Tasarım.</strong>
+      </h2>
+      <div class="final-rule reveal d2"></div>
+      <p class="final-body reveal d3">
+        Her mekan, kaybolan bir drenajı hak ediyor. Kalıcı mühendislik.
+        Yükselten estetik. PH Dizayn bunun için kuruldu — ve mükemmelleştirmeye
+        devam ediyor.
+      </p>
+      <div class="cta-group reveal d4">
+        <a href="https://phdizayn.com/iletisim" target="_blank">
+          <button class="btn-white">Proje Teklifi Al</button>
+        </a>
+        <a href="https://phdizayn.com/dus-kanallari" target="_blank">
+          <button class="btn-outline-white">Ürünleri İncele →</button>
+        </a>
+      </div>
+
+      <div class="footer reveal d5">
+        <div class="footer-logo">PH <span>Dizayn</span></div>
+        <div class="footer-links">
+          <a href="https://phdizayn.com/hakkimizda"   target="_blank">Hakkımızda</a>
+          <a href="https://phdizayn.com/online-katalog" target="_blank">Katalog</a>
+          <a href="https://phdizayn.com/referanslar"  target="_blank">Referanslar</a>
+          <a href="https://phdizayn.com/iletisim"     target="_blank">İletişim</a>
+        </div>
+        <p class="footer-copy">© 2024 PH Dizayn. Tüm Hakları Saklıdır.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="main.js"></script>
+</body>
+</html>
